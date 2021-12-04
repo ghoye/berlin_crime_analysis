@@ -863,7 +863,7 @@ for (n in 1:length(district_names)) {
 
 heatmap(total_matrix, Rowv=NA, Colv=NA, scale="row",
         main="Total Crimes By District in Berlin, 2012-2019", 
-        margins = c(10,10)) # Create heatmap, scaled by rows)
+        margins = c(10,10)) # Create heatmap, scaled by rows
 ```
 
 ![](berlin_crime_analysis_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
