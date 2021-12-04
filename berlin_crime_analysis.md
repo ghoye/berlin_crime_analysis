@@ -12,9 +12,9 @@ Neukölln, Lichtenberg, Marzahn-Hellersdorf, and Treptow-Köpenick. Thanks
 to a user on Kaggle, I had the opportunity to study the crime data from
 the city of Berlin and its districts for the years of 2012 to 2019.
 
-In general, I examined the data on a year-to-year basis, rather than the
-entire seven-year period, so that years with higher numbers would not
-bias the results. However, I did use data for the complete span for
+On the whole, I examined the data on a year-to-year basis, rather than
+the entire seven-year period, so that years with higher numbers would
+not bias the results. However, I did use data for the complete span for
 particular calculations. In addition, due to the rather long names of
 Berlin’s districts, I chose to shorten some names in certain instances.
 For example, “Charlottenburg-Wilmersdorf” is listed as “Charlottenburg,”
@@ -47,7 +47,7 @@ knitr::kable(head(crimes), format = "markdown")
 # knitr::kable(tail(crimes), format = "markdown")
 ```
 
-## Preprocessing: Add column: Total annual crimes per location in each district
+## Preprocessing
 
 Before conducting my full analysis, I decided to add a column to the
 dataset that indicates the total number of crimes committed in the area
@@ -71,7 +71,7 @@ knitr::kable(head(crimes), format = "markdown")
 | 2012 | Mitte    | 10221 | Moabit West       |     130 |              51 |    629 |          185 |    199 |  2470 |  94 |       410 |  325 |      161 |   42 |    22 |    516 |       64 |   259 |  1403 |  5557 |
 | 2012 | Mitte    | 10222 | Moabit Ost        |      89 |              45 |    549 |          147 |    204 |  2290 |  63 |       353 |  337 |       90 |   33 |    10 |    392 |       52 |   416 |  1212 |  5070 |
 
-## Part 1: Analysis on Single Variables (Module 3)
+## Analysis on Single Variables
 
 ### Categorical Variable: Geographical Location (2012)
 
@@ -228,7 +228,7 @@ in terms of robberies in 2015, with over 1,000 committed in each. The
 fewest robberies (under 200) were reported in Steglitz-Zehlendorf,
 located in the southwestern portion of Berlin.
 
-## Part 2: Analysis on Set of Variables (Module 3)
+## Analysis on Sets of Variables
 
 ### Set: Street\_robbery and Agg\_assault (2018)
 
@@ -487,7 +487,7 @@ cars, and burglary generally declined, whereas injury, property damage,
 and illegal drugs increased over the five-year span. Street robberies,
 fire, and arson remained relatively constant throughout this period.
 
-## Part 3: Distribution of Numerical Variable: Theft
+## Distribution of Numerical Variable: Theft
 
 The variable “Theft” refers to larceny that is classified neither as the
 theft of bicycles or cars (or theft from cars) nor as burglary. Due at
@@ -523,7 +523,7 @@ Looking at the overall dataset, the mean is approximately 1,492—meaning
 that almost 1,500 thefts occurred in any neighborhood in Berlin in a
 given year between 2012 and 2019.
 
-## Part 4: Random Sampling with the Central Limit Theorem
+## Random Sampling with the Central Limit Theorem
 
 The calculation of statistics such as the mean and standard deviation
 for the theft data involves processing over two thousand elements in the
@@ -586,7 +586,7 @@ larger. Furthermore, it is clear from the four plots that with a larger
 sample size, the distribution does indeed appear to be more normal and
 centered around the mean.
 
-## Part 5: Sampling Methods
+## Sampling Methods
 
 ### Method: Simple Random Sampling Without Replacement
 
@@ -842,7 +842,7 @@ rates would be better represented, consequently biasing the mean of the
 sample. Therefore, the other methods should be used to produce more
 accurate representations of the total population.
 
-## Part 6: Visualization of Total Crimes as Heatmap
+## Visualization of Total Crimes as Heatmap
 
 I also created a heatmap of district crime totals in Berlin from 2012 to
 2019, scaled by rows. Heatmaps serve as a straightforward, color-coded
