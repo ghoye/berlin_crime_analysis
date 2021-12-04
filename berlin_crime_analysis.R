@@ -10,7 +10,12 @@ file <- c("/Users/ghoye/Documents/Berlin_crimes.csv")
 crimes <- read.csv(file)
 head(crimes)
 
+## Preprocessing
+
 crimes$Total <- rowSums(crimes[,5:(ncol(crimes)-1)]) # ncol-1 to exclude "Local"
+
+## Analysis on Single Variables
+### Categorical Variable: Geographical Location (2012)
 
 district_names <- row.names(table(crimes$District))
 directions <- c("North", "South", "East", "West", "Central")
@@ -82,7 +87,7 @@ barplot(robberies_districts, col=c("red"), cex.names = 0.6, las=3,
         names.arg=districts_short, ylim=c(0, max(robberies_districts)+160),
         ylab="Number of Robberies", main="Robberies By District in Berlin, 2015")
 
-## Part 2: Analysis on Set of Variables (Module 3)
+## Analysis on Sets of Variables
 ### Set: Street_robbery and Agg_assault (2018)
 
 crimes_2018 <- subset(crimes, Year == 2018)
@@ -206,7 +211,7 @@ barplot(t(all_crimes), col=my_palette3, beside=TRUE, cex.names=0.6, las=3,
         main="Total Crimes By Type in Berlin, 2015-2019", legend.text=TRUE,
         args.legend = list(x = "topright", inset = c(-0.02, 0)))
 
-## Part 3: Distribution of Numerical Variable: Theft
+## Distribution of Numerical Variable: Theft
 
 breaks <- seq(from=0, to=14000, by=1000)
 hist(crimes$Theft, xlab="Number of Reports", ylim=c(0, 600), 
@@ -217,7 +222,7 @@ hist(crimes$Theft, xlab="Number of Reports", ylim=c(0, 600),
 sprintf("The mean of 'Theft' is %f.", mean(crimes$Theft))
 sprintf("The standard deviation of 'Theft' is %f.", sd(crimes$Theft))
 
-## Part 4: Random Sampling with the Central Limit Theorem
+## Random Sampling with the Central Limit Theorem
 
 last_four <- 9294
 set.seed(last_four)
@@ -248,7 +253,7 @@ for(n in sample_size){
       " SD = ", round(sd(xbar),4), "\n")
 }
 
-## Part 5: Sampling Methods
+## Sampling Methods
 ### Method: Simple Random Sampling Without Replacement
 
 set.seed(last_four)
@@ -321,7 +326,7 @@ for (s in num_samps) {
   }
 }
 
-## Part 6: Visualization of Total Crimes as Heatmap
+## Visualization of Total Crimes as Heatmap
 
 years <- seq(from=2012, to=2019)
 total_matrix <- matrix(nrow=length(district_names), ncol=length(years),
